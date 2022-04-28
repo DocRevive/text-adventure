@@ -1,0 +1,86 @@
+# Format and notes by Daniel Kim
+#
+# Situations are identified by unique string keys.
+# No two may be the same and all keys that could
+# implicitly become other data types must be wrapped in
+# double quotes.
+# The outermost map has three properties: first, intro, situations.
+first: zero
+
+# An example of a multiline string is below.
+intro: |-
+  It is a dark and stormy night.
+  The wind is howling.
+situations:
+  # "Situations" is a nested map with unique keys each mapped
+  # to another map describing it.
+  zero:
+    # Each situation is described by a description and a map
+    # of options.
+
+    # An example of a single-line string is below.
+    description: Overwhelming premonition and fear befall you.
+    options:
+      # Options are presented in the order that these
+      # pairs are put in. They are mapped to the situation
+      # that, if the option is chosen, happens.
+      Take deep breaths: calm
+      Run: flee
+  flee:
+    description: |-
+      In a flurry of panic, you crash through the woods in 
+      a random direction. After a while, you come to your
+      senses, which tell you that you're lost.
+    options:
+      # A situation can have as many or as little options as
+      # desired.
+      Venture on: wolf
+  calm:
+    description: |-
+      Shakily, you take a few normal breaths. Then, steady
+      breaths. Your breathing deepens. Your chest expands
+      and contracts in time with the lateral sway of the
+      once-intimidating trees. Your breaths are so deep 
+      that you seriously doubt your lungs have this kind of
+      capacity.
+    options:
+      Stop: safe
+      Continue: enlightenment
+  wolf:
+    description: |-
+      The world is pitch-black now. Almost comical. You begin
+      to giggle. Oh, for the brain of a human. It's darkly funny 
+      how we anticipate these kinds of things. One would expect
+      such a superior species to have consolidated a resolute
+      drive to survive.
+      
+      The wolves rip your abdomen open and feast.
+    options:
+    # No options means that this is AN endpoint (ending)
+    # of the game. There should be multiple, since there
+    # are different choices, branches, and outcomes.
+  safe:
+    description: |-
+      Your newfound confidence has diminished the confidence 
+      of the wolves. Behind you, the brush rustles, casts light,
+      and emits sounds of stumbling and exclamations of relief.
+      The search party found you alive.
+    # You can also exclude the "options" property entirely.
+  enlightenment:
+    description: |-
+      You close your eyes and continue. And do not stop. The search
+      party finds you, but the trees bar them from approaching, the 
+      wind obscures their shouts, and the wolves scare them away. In
+      perfect solace, in that natural haven, the trees grow a barrier,
+      the rainfall molds a plateau, and the river diverts itself to 
+      form a waterfall. And in time, your breaths push and pull the 
+      earthly winds, the sun offers its service to you, and the entire
+      flux and flow of the planet are blessedly touched by subtle 
+      changes in your eternal, all-encompassing breaths. And in time,
+      your breaths thrust the planet along its elliptical orbit, guide
+      the sun along its galactic orbit, assist the voiding masses in 
+      their quests, and the expanding universe in its race. 
+      
+      You have transcended the times of all humanity, Sol, the Local 
+      Group, and the universe, but as a consequence, only you remain 
+      in this cold, dark night.
