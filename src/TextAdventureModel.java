@@ -27,6 +27,11 @@ public class TextAdventureModel {
                 new InputStreamReader(Objects.requireNonNull(
                         this.getClass().getResourceAsStream(resourceFile))));
 
+        /*
+         * SnakeYAML accepts a custom class that mimics the
+         * data (properties as instance variables) and will
+         * store the data in an instance of that class.
+         */
         Yaml yaml = new Yaml(new Constructor(Story.class));
         story = yaml.load(reader);
     }

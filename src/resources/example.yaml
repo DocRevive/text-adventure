@@ -1,9 +1,6 @@
 # Format and notes by Daniel Kim
 #
 # Situations are identified by unique string keys.
-# No two may be the same and all keys that could
-# implicitly become other data types must be wrapped in
-# double quotes.
 # The outermost map has three properties: first, intro, situations.
 first: zero
 

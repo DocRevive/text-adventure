@@ -61,13 +61,15 @@ public class TextAdventureController {
     {
         int option;
 
+        // Validate numerical options
         try {
             option = Integer.parseInt(input, 10);
             int limit = currentSituation.getOptions().size();
 
             if (option < 1 || option > limit) throw new Exception();
         } catch (final Exception e) {
-            output = "Please enter a valid number option.\n\n" + output;
+            output = "Please enter a valid number option.\n\n"
+                    + story.getSituation(situationKey);
             return;
         }
 
